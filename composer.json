@@ -1,6 +1,6 @@
 {
     "name": "priithansen/silverstripe-markdowntextareafield",
-    "description": "Supercharged textarea with markdowd preview and toolbar for Silverstripe CMS",
+    "description": "Supercharged textarea with markdown preview for Silverstripe CMS",
     "type": "silverstripe-module",
     "keywords": ["silverstripe", "markdown", "module", "cms"],
     "license": "BSD-3-Clause",
