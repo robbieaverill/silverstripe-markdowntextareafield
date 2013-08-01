@@ -3,23 +3,25 @@
  * Represents a large text field that contains HTML and Markdown content.
  * Markdown gets processed automatically to HTML in templates
  */
-class MarkdownText extends Text {
+class MarkdownText extends HTMLText {
 
-	private static $escape_type = 'xml';
-
+	public static $casting = array(
+		'MarkdownAsHTML'		=>	'MarkdownText',
+		'MarkdownExtraAsHTML' 	=>	'MarkdownText',
+	);
 
 	public function forTemplate() {
-		
-		// First parse Markdown to HTML then deal with Silverstripe shortcodes
+		return $this->MarkdownAsHTML();
+	}
+
+	public function MarkdownAsHTML() {
 		$parser = new MarkdownParser($this->value);
-		$html = $parser->parse();
-		
-		if ($this->processShortcodes) {
-			return ShortcodeParser::get_active()->parse($html);
-		}
-		else {
-			return $html;
-		}
+		return $parser->parse();
+	}
+
+	public function MarkdownExtraAsHTML() {
+		$parser = new MarkdownParser($this->value);
+		return $parser->parseExtra();
 	}
 
 	public function scaffoldFormField($title = null, $params = null) {

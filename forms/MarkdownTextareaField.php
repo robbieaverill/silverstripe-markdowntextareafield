@@ -13,6 +13,14 @@ class MarkdownTextareaField extends TextareaField {
 	 */
 	protected $rows = 15;
 
+	/**
+	 * Toggle rendering markdown with extra syntax enabled.
+	 * @link http://michelf.ca/projects/php-markdown/extra
+	 * @var boolean
+	 */
+	protected $enable_extra = false;
+
+
 	/* For some reason jquery didn't like it when requirements where in _config.php */
 	public function __construct($name, $title = null, $value = null) {
 	
@@ -24,6 +32,15 @@ class MarkdownTextareaField extends TextareaField {
 		Requirements::javascript('markdowntextareafield/templates/javascript/script.js');
 
 		parent::__construct($name, $title, $value);
+	}
+
+	/**
+	 * Turn on extra syntax support
+	 * @return MarkdownTextareaField
+	 */
+	public function enableExtra() {
+		$this->enable_extra = true;
+		return $this;
 	}
 
 
@@ -45,9 +62,8 @@ class MarkdownTextareaField extends TextareaField {
 	public function parse() {
 
 		$parser = new MarkdownParser($this->request['markdown']);
-		$html = $parser->parse();
-		
-		return $html;
+
+		return ($this->enable_extra) ? $parser->parseExtra() : $parser->parse(); 
 	}
 
 	/**
