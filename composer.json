@@ -1,6 +1,6 @@
 {
-    "name": "priithansen/markdowntextareafield",
-    "description": "Markdown capable textarea with buttons and preview for SilverStripe CMS",
+    "name": "priithansen/silverstripe-markdowntextareafield",
+    "description": "Supercharged textarea with markdowd preview and toolbar for Silverstripe CMS",
     "type": "silverstripe-module",
     "keywords": ["silverstripe", "markdown", "module", "cms"],
     "license": "BSD-3-Clause",
@@ -12,6 +12,8 @@
     ],
     "require":
     {
+        "silverstripe/framework": ">=3.1.x-dev,<4.0",
+        "silverstripe/cms": ">=3.1.x-dev,<4.0",
         "michelf/php-markdown": "*"
     },
     "extra": {
