@@ -3,7 +3,8 @@
 class MarkdownTextareaField extends TextareaField {
 
 	private static $allowed_actions = array(
-		'preview'
+		'preview',
+		'parse'
 	);
 
 	/**
@@ -12,7 +13,24 @@ class MarkdownTextareaField extends TextareaField {
 	 */
 	protected $rows = 15;
 
+	/* For some reason jquery didn't like it when requirements where in _config.php */
+	public function __construct($name, $title = null, $value = null) {
+	
+		Requirements::css('markdowntextareafield/templates/css/styles.css');
 
+		Requirements::javascript(THIRDPARTY_DIR . '/jquery/jquery.js');
+		Requirements::javascript(THIRDPARTY_DIR. '/jquery-entwine/dist/jquery.entwine-dist.js');
+		Requirements::javascript('markdowntextareafield/thirdparty/textinputs_jquery.js');
+		Requirements::javascript('markdowntextareafield/templates/javascript/script.js');
+
+		parent::__construct($name, $title, $value);
+	}
+
+
+	/**
+	 * Body for the preview iframe with just the typography styles included
+	 * @return string html
+	 */
 	public function preview() {
 		Requirements::clear();
 		// Should contain text styles of the page by Silverstripe theme conventions.
@@ -20,6 +38,17 @@ class MarkdownTextareaField extends TextareaField {
 		return $this->renderWith('PreviewFrame');
 	}
 
+	/**
+	 * Parse markdown into html
+	 * @return string html
+	 */
+	public function parse() {
+
+		$parser = new MarkdownParser($this->request['markdown']);
+		$html = $parser->parse();
+		
+		return $html;
+	}
 
 	/**
 	 * Get buttons described in buttons.yml and wrap them in ViewableData

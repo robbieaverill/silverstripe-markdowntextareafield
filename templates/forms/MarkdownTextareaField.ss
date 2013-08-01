@@ -1,6 +1,6 @@
 <div class="toolbar">
 	<% loop $ToolbarButtons %>
-		<button data-prefix="$prefix" data-affix="$affix">
+		<button data-prefix="$prefix" data-affix="$affix" title="$name">
 			<% if $pic %>
 				<img src="markdowntextareafield/templates/images/buttons/$pic" alt="$name" title="$name">
 			<% else %>
@@ -9,7 +9,5 @@
 		</button>
 	<% end_loop %>
 </div>
-<textarea $AttributesHTML>$Value</textarea>
-<div class="previewarea">
-	<iframe src="{$Link}/preview" frameborder="0" scrolling="auto"></iframe>
-</div>
+<textarea data-parseurl="{$Link}/parse" $AttributesHTML>$Value</textarea>
+<iframe class="previewarea" src="{$Link}/preview" frameborder="0" scrolling="auto"></iframe>

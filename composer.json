@@ -12,12 +12,8 @@
     ],
     "require":
     {
-        "silverstripe/cms": ">=3.1.x-dev,<4.0",
-        "components/rangy": "*",
+        "michelf/php-markdown": "*"
     },
-    "config": {
-        "component-dir": "jaaaar"
-    }
     "extra": {
 	   "installer-name": "markdowntextareafield"
     }
