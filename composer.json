@@ -1,0 +1,25 @@
+{
+    "name": "priithansen/markdowntextareafield",
+    "description": "Markdown capable textarea with buttons and preview for SilverStripe CMS",
+    "type": "silverstripe-module",
+    "keywords": ["silverstripe", "markdown", "module", "cms"],
+    "license": "BSD-3-Clause",
+    "authors": [
+    {
+        "name": "Priit Hansen",
+        "email": "priit@priit.it"
+    }
+    ],
+    "require":
+    {
+        "silverstripe/cms": ">=3.1.x-dev,<4.0",
+        "components/rangy": "*",
+    },
+    "config": {
+        "component-dir": "jaaaar"
+    }
+    "extra": {
+	   "installer-name": "markdowntextareafield"
+    }
+    
+}

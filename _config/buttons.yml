@@ -1,0 +1,44 @@
+MarkdownTextareaField:
+  buttons:
+    bold:
+      label: 'B'
+      prefix: '**'
+      affix: '**'
+      pic: 'text_bold.png'
+      name: 'bold'
+    italic:
+      label: 'I'
+      prefix: '_'
+      affix: '_'
+      pic: 'text_italic.png'
+      name: 'italic'
+    heading1:
+      label: 'H1'
+      prefix: '# '
+      affix: ''
+      pic: 'text_heading_1.png'
+      name: 'Heading 1'
+    heading2:
+      label: 'H2'
+      prefix: '## '
+      affix: ''
+      pic: 'text_heading_2.png'
+      name: 'Heading 2'
+    unorderedlist:
+      label: 'UL'
+      prefix: '* '
+      affix: '&#x0D;&#x0A;* &#x0D;&#x0A;* '
+      pic: 'text_list_bullets.png'
+      name: 'List bullets'
+    orderedlist:
+      label: 'OL'
+      prefix: '1. '
+      affix: '&#x0D;&#x0A;2. &#x0D;&#x0A;3. '
+      pic: 'text_list_numbers.png'
+      name: 'List numbers'
+    horizontalline:
+      label: 'HR'
+      prefix: ''
+      affix: '&#x0D;&#x0A;- - -&#x0D;&#x0A;'
+      pic: 'text_horizontalrule.png'
+      name: 'Horizontal line'
