@@ -56,7 +56,7 @@
 		        clearTimeout(timer);
 		        timer = setTimeout(function() {
 		            self.parseMarkdown(self.getParseUrl(), self.val());
-		        },750);		
+		        },350);		
 			},
 			onmouseup: function() {
 				this.syncPreviewHeight();

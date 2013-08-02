@@ -20,10 +20,14 @@ class MarkdownTextareaField extends TextareaField {
 	 */
 	protected $enable_extra = false;
 
+	/**
+     * Returns the field holder used by templates
+     * @return {string} HTML to be used
+     */
+    public function FieldHolder($properties=array()) {
+		
+		$this->extraClasses['stacked']='stacked';
 
-	/* For some reason jquery didn't like it when requirements where in _config.php */
-	public function __construct($name, $title = null, $value = null) {
-	
 		Requirements::css('markdowntextareafield/templates/css/styles.css');
 
 		Requirements::javascript(THIRDPARTY_DIR . '/jquery/jquery.js');
@@ -31,8 +35,8 @@ class MarkdownTextareaField extends TextareaField {
 		Requirements::javascript('markdowntextareafield/thirdparty/textinputs_jquery.js');
 		Requirements::javascript('markdowntextareafield/templates/javascript/script.js');
 
-		parent::__construct($name, $title, $value);
-	}
+		return parent::FieldHolder($properties);
+    }
 
 	/**
 	 * Turn on extra syntax support
