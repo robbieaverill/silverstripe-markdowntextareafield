@@ -22,12 +22,12 @@
  * SilverStripe >=3.1
  * PHP Markdown
 
-## Installation and Instructions
+## Installation
  
  * Use composer to install `composer require priithansen/silverstripe-markdowntextareafield:*`
  * Run /dev/build?flush=1
 
-## Instructions
+### Instructions
 
 You can use MarkdownText data type for regular markdown or MarkdownTextExtra for added syntax features.
 
@@ -55,17 +55,17 @@ class Page extends SiteTree {
 It is also possible to override markdown syntax in template
 
 ```html
-    <div class="content">
-        $MarkdownContent    <!-- Depending on data type used -->
-    </div>
+<div class="content">
+    $MarkdownContent    <!-- Depending on data type used -->
+</div>
 
-    <div class="content">
-        $MarkdownContent.MarkdownAsHTML    <!-- Works with both data types, regular markdown -->
-    </div>
+<div class="content">
+    $MarkdownContent.MarkdownAsHTML    <!-- Works with both data types, regular markdown -->
+</div>
     
-    <div class="content">
-        $MarkdownContent.MarkdownExtraAsHTML    <!-- Works with both data types, extended syntax -->
-    </div>
+<div class="content">
+    $MarkdownContent.MarkdownExtraAsHTML    <!-- Works with both data types, extended syntax -->
+</div>
 ```
 
 ## Notes
