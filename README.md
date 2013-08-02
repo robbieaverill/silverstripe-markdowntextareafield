@@ -41,8 +41,8 @@ class Page extends SiteTree {
     public function getCMSFields() {
         $fields=parent::getCMSFields();
 
-        $markdownfield = MarkdownTextareaField::create('MarkdownContent')
-        $markdownfield->enableExtra(); // Enables extra syntax support for live preview.
+        $markdownfield = MarkdownTextareaField::create('MarkdownContent');
+        $markdownfield->enableExtra(); // Enables extra syntax support for fields live preview.
 
         $fields->addFieldToTab('Root.Main', $markdownfield);        
         return $fields;
