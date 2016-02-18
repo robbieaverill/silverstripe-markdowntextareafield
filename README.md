@@ -1,13 +1,13 @@
 # Markdown capable TextareaField for Silverstripe CMS
 
 ## Features
- * Live preview
+ * Live preview (toggle)
  * Extendable toolbar with common markdown functions
  * Support for both regular markdown and [extra functions](http://michelf.ca/projects/php-markdown/extra)
 
 ## Screenshot
 
-![Alt text](/templates/images/screenshot.png?raw=true)
+![Markdown editor screenshot](/templates/images/screenshot.png?raw=true)
 
 ## Credits and Authors
 
@@ -25,11 +25,11 @@
 ## Installation
  
  * Use composer to install `composer require priithansen/silverstripe-markdowntextareafield:*`
- * Run /dev/build?flush=1
+ * Run `/dev/build?flush=1`
 
 ### Instructions
 
-You can use MarkdownText data type for regular markdown or MarkdownTextExtra for added syntax features.
+You can use the `MarkdownText` data type for regular markdown or `MarkdownTextExtra` for added syntax features:
 
 ```php
 class Page extends SiteTree {
@@ -39,7 +39,7 @@ class Page extends SiteTree {
     );
 
     public function getCMSFields() {
-        $fields=parent::getCMSFields();
+        $fields = parent::getCMSFields();
 
         $markdownfield = MarkdownTextareaField::create('MarkdownContent');
         $markdownfield->enableExtra(); // Enables extra syntax support for fields live preview.
@@ -52,7 +52,7 @@ class Page extends SiteTree {
 
 ### Template:
 
-It is also possible to override markdown syntax in template
+It is also possible to override/use markdown syntax in templates:
 
 ```html
 <div class="content">
@@ -70,4 +70,4 @@ It is also possible to override markdown syntax in template
 
 ## Notes
 
- * Bug reports and ideas more than welcome
+ * Bug reports and ideas more than welcome.
