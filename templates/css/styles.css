@@ -1,5 +1,6 @@
 .field.markdowntextarea .toolbar {
 	margin-bottom: 5px;
+	height: 32px;
 }
 
 .field.markdowntextarea .toolbar button:first-child {
@@ -16,8 +17,13 @@
 	background: white;
 	border: 1px solid #B3B3B3;
 	border-radius: 4px;
-	-webkit-transition: height 1s ;
-	-moz-transition: height 1s ;
-	-o-transition: height 1s ;
-	transition: height 1s ;
+	-webkit-transition: height 1s;
+	-moz-transition: height 1s;
+	-o-transition: height 1s;
+	transition: height 1s;
+	display: none;
+}
+
+.field.markdowntextarea .toolbar button[data-preview="true"] {
+	float: right;
 }

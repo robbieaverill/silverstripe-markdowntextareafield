@@ -32,6 +32,13 @@
 				if (this.attr('data-prefix') || this.attr('data-affix')) {
 					this.getTextarea().surroundSelectedText(this.attr('data-prefix'), this.attr('data-affix'));
 				}
+
+				// Toggle edit/preview mode
+				if (this.attr('data-preview')) {
+					this.getTextarea().toggle();
+					this.getPreview().toggle();
+					$('.field.markdowntextarea button').not(this).toggle();
+				}
 			},
 
 		});

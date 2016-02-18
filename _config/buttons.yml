@@ -42,3 +42,7 @@ MarkdownTextareaField:
       affix: '&#x0D;&#x0A;- - -&#x0D;&#x0A;'
       pic: 'text_horizontalrule.png'
       name: 'Horizontal line'
+    togglepreview:
+      label: 'Edit/Preview'
+      name: 'Edit/Preview'
+      preview: true
