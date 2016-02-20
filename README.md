@@ -1,5 +1,7 @@
 # Markdown capable TextareaField for Silverstripe CMS
 
+[![Packagist](https://img.shields.io/packagist/v/robbieaverill/silverstripe-markdowntextareafield.svg)](https://packagist.org/packages/robbieaverill/silverstripe-markdowntextareafield) [![Packagist](https://img.shields.io/packagist/dt/robbieaverill/silverstripe-markdowntextareafield.svg)](https://packagist.org/packages/robbieaverill/silverstripe-markdowntextareafield)
+
 ## Features
  * Live preview (toggle)
  * Extendable toolbar with common markdown functions
