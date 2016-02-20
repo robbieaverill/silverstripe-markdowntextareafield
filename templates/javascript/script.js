@@ -18,7 +18,6 @@
 			},
 			updatePreview: function( htmldata ) {
 				this.getPreview().contents().find('body').html(htmldata);
-			//	this.updatePreviewHeight();
 			},
 			updatePreviewHeight: function() {
 				this.getPreview().height(this.getPreview().contents().find('html').height()); 

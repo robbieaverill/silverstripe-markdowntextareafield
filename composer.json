@@ -1,14 +1,23 @@
 {
-    "name": "priithansen/silverstripe-markdowntextareafield",
+    "name": "robbieaverill/silverstripe-markdowntextareafield",
     "description": "Supercharged textarea with markdown preview for Silverstripe CMS",
     "type": "silverstripe-module",
     "keywords": ["silverstripe", "markdown", "module", "cms"],
     "license": "BSD-3-Clause",
+    "replace": {
+        "priithansen/silverstripe-markdowntextareafield": "*"
+    },
     "authors": [
-    {
-        "name": "Priit Hansen",
-        "email": "priit@priit.it"
-    }
+        {
+            "name": "Priit Hansen",
+            "email": "priit@priit.it",
+            "role": "Author"
+        },
+        {
+            "name": "Robbie Averill",
+            "email": "robbie@averill.co.nz",
+            "role": "Maintainer"
+        }
     ],
     "require":
     {
@@ -17,7 +26,6 @@
         "michelf/php-markdown": "*"
     },
     "extra": {
-	   "installer-name": "markdowntextareafield"
+       "installer-name": "markdowntextareafield"
     }
-    
 }

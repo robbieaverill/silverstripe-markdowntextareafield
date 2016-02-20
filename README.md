@@ -11,6 +11,8 @@
 
 ## Credits and Authors
 
+ * Original author - Priit Hansen <priit@priit.it>
+ * Maintainer - Robbie Averill <robbie@averill.co.nz>
  * Silverstripe CMS - <http://www.silverstripe.org/>
  * PHP Markdown - <http://michelf.ca/projects/php-markdown/>
  * Rangy Text Inputs - <http://code.google.com/p/rangy/>
@@ -19,12 +21,12 @@
 
 ## Requirements
 
- * SilverStripe >=3.1
- * PHP Markdown
+ * SilverStripe >= 3.1
+ * [PHP Markdown](https://github.com/michelf/php-markdown)
 
 ## Installation
  
- * Use composer to install `composer require priithansen/silverstripe-markdowntextareafield:*`
+ * Use composer to install `composer require robbieaverill/silverstripe-markdowntextareafield:*`
  * Run `/dev/build?flush=1`
 
 ### Instructions
