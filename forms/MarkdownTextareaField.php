@@ -2,6 +2,10 @@
 
 class MarkdownTextareaField extends TextareaField {
 
+	/**
+	 * Define the actions allowed on this field
+	 * @var array
+	 */
 	private static $allowed_actions = array(
 		'preview',
 		'parse'
@@ -22,16 +26,16 @@ class MarkdownTextareaField extends TextareaField {
 
 	/**
      * Returns the field holder used by templates
-     * @return {string} HTML to be used
+     * @return string HTML to be used
      */
-    public function FieldHolder($properties=array()) {
+    public function FieldHolder($properties = array()) {
 		
-		$this->extraClasses['stacked']='stacked';
+		$this->extraClasses['stacked'] = 'stacked';
 
 		Requirements::css('markdowntextareafield/templates/css/styles.css');
 
 		Requirements::javascript(THIRDPARTY_DIR . '/jquery/jquery.js');
-		Requirements::javascript(THIRDPARTY_DIR. '/jquery-entwine/dist/jquery.entwine-dist.js');
+		Requirements::javascript(THIRDPARTY_DIR . '/jquery-entwine/dist/jquery.entwine-dist.js');
 		Requirements::javascript('markdowntextareafield/thirdparty/textinputs_jquery.js');
 		Requirements::javascript('markdowntextareafield/templates/javascript/script.js');
 
@@ -55,7 +59,7 @@ class MarkdownTextareaField extends TextareaField {
 	public function preview() {
 		Requirements::clear();
 		// Should contain text styles of the page by Silverstripe theme conventions.
-		Requirements::css('themes/'. Config::inst()->get('SSViewer', 'theme') . '/css/editor.css');
+		Requirements::css('themes/' . Config::inst()->get('SSViewer', 'theme') . '/css/editor.css');
 		return $this->renderWith('PreviewFrame');
 	}
 
@@ -64,7 +68,6 @@ class MarkdownTextareaField extends TextareaField {
 	 * @return string html
 	 */
 	public function parse() {
-
 		$parser = new MarkdownParser($this->request['markdown']);
 
 		return ($this->enable_extra) ? $parser->parseExtra() : $parser->parse(); 
@@ -75,7 +78,6 @@ class MarkdownTextareaField extends TextareaField {
 	 * @return ArrayList list of buttons and theyr configurations
 	 */
 	public function ToolbarButtons() {
-
 		$buttons = new ArrayList();
 
 		foreach($this->config()->get('buttons') as $button) {
