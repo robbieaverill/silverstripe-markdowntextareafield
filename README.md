@@ -13,8 +13,8 @@
 
 ## Credits and Authors
 
- * Original author - Priit Hansen <priit@priit.it>
- * Maintainer - Robbie Averill <robbie@averill.co.nz>
+ * Original author - Priit Hansen (@priithansen)
+ * Maintainer - Robbie Averill (@robbieaverill)
  * Silverstripe CMS - <http://www.silverstripe.org/>
  * PHP Markdown - <http://michelf.ca/projects/php-markdown/>
  * Rangy Text Inputs - <http://code.google.com/p/rangy/>
