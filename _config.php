@@ -4,8 +4,10 @@
 $dir = basename(dirname(__FILE__));
 
 if ($dir != 'markdowntextareafield') {
-	user_error(
+    user_error(
         'Markdown: Directory name must be "markdowntextareafield" (currently "' . $dir . '")',
         E_USER_ERROR
     );
 }
+
+define('MARKDOWN_DIR', $dir);

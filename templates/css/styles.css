@@ -1,29 +1,29 @@
 .field.markdowntextarea .toolbar {
-	margin-bottom: 5px;
-	height: 32px;
+    margin-bottom: 5px;
+    height: 32px;
 }
 
 .field.markdowntextarea .toolbar button:first-child {
-	margin-left: 0;
+    margin-left: 0;
 }
 
 .field.markdowntextarea textarea {
-	min-width: 100%;
+    min-width: 100%;
 }
 
 .field.markdowntextarea .previewarea {
-	width: 100%;
-	min-height: 150px;
-	background: white;
-	border: 1px solid #B3B3B3;
-	border-radius: 4px;
-	-webkit-transition: height 1s;
-	-moz-transition: height 1s;
-	-o-transition: height 1s;
-	transition: height 1s;
-	display: none;
+    width: 100%;
+    min-height: 150px;
+    background: white;
+    border: 1px solid #B3B3B3;
+    border-radius: 4px;
+    -webkit-transition: height 1s;
+    -moz-transition: height 1s;
+    -o-transition: height 1s;
+    transition: height 1s;
+    display: none;
 }
 
 .field.markdowntextarea .toolbar button[data-preview="true"] {
-	float: right;
+    float: right;
 }

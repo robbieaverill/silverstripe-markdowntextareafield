@@ -1,10 +1,10 @@
 <!doctype html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>Preview</title>
+    <meta charset="UTF-8">
+    <title>Preview</title>
 </head>
 <body>
-	
+    
 </body>
 </html>
