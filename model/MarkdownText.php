@@ -44,6 +44,24 @@ class MarkdownText extends HTMLText
     }
 
     /**
+     * Return Markdown content as JSON encoded HTML
+     * @return string JSON
+     */
+    public function MarkdownAsJS()
+    {
+        return Convert::raw2json($this->MarkdownAsHTML());
+    }
+
+    /**
+     * Return MarkdownExtra content as JSON encoded HTML
+     * @return string JSON
+     */
+    public function MarkdownExtraAsJS()
+    {
+        return Convert::raw2json($this->MarkdownExtraAsHTML());
+    }
+
+    /**
      * Return an instance of the MarkdownTextareaField
      * @param  string $title
      * @param  array  $params
