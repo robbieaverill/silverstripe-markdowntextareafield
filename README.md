@@ -27,7 +27,7 @@
  * [PHP Markdown](https://github.com/michelf/php-markdown)
 
 ## Installation
- 
+
  * Use composer to install `composer require robbieaverill/silverstripe-markdowntextareafield:*`
  * Run `/dev/build?flush=1`
 
@@ -66,9 +66,18 @@ It is also possible to override/use markdown syntax in templates:
 <div class="content">
     $MarkdownContent.MarkdownAsHTML    <!-- Works with both data types, regular markdown -->
 </div>
-    
+
 <div class="content">
     $MarkdownContent.MarkdownExtraAsHTML    <!-- Works with both data types, extended syntax -->
+</div>
+
+<div class="content">
+    <pre>
+        // Render JSON content
+        $MarkdownContent.MarkdownAsJS
+        // or
+        $MarkdownContent.MarkdownExtraAsJS
+    </pre>
 </div>
 ```
 
