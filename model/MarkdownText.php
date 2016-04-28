@@ -10,8 +10,8 @@ class MarkdownText extends HTMLText
      * @var array
      */
     public static $casting = array(
-        'MarkdownAsHTML'        =>  'MarkdownText',
-        'MarkdownExtraAsHTML'   =>  'MarkdownText',
+        'MarkdownAsHTML'      => 'MarkdownText',
+        'MarkdownExtraAsHTML' => 'MarkdownText',
     );
 
     /**

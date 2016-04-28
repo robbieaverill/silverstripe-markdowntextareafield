@@ -1,6 +1,6 @@
 # Markdown capable TextareaField for Silverstripe CMS
 
-[![Packagist](https://img.shields.io/packagist/v/robbieaverill/silverstripe-markdowntextareafield.svg)](https://packagist.org/packages/robbieaverill/silverstripe-markdowntextareafield) [![Packagist](https://img.shields.io/packagist/dt/robbieaverill/silverstripe-markdowntextareafield.svg)](https://packagist.org/packages/robbieaverill/silverstripe-markdowntextareafield) [![Code quality via Scrutinizer CI](https://scrutinizer-ci.com/g/robbieaverill/silverstripe-markdowntextareafield/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/robbieaverill/silverstripe-markdowntextareafield/)
+[![Packagist](https://img.shields.io/packagist/v/robbieaverill/silverstripe-markdowntextareafield.svg)](https://packagist.org/packages/robbieaverill/silverstripe-markdowntextareafield) [![Packagist](https://img.shields.io/packagist/dt/robbieaverill/silverstripe-markdowntextareafield.svg)](https://packagist.org/packages/robbieaverill/silverstripe-markdowntextareafield) [![Code quality via Scrutinizer CI](https://scrutinizer-ci.com/g/robbieaverill/silverstripe-markdowntextareafield/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/robbieaverill/silverstripe-markdowntextareafield/) [![Build Status](https://travis-ci.org/robbieaverill/silverstripe-markdowntextareafield.svg?branch=master)](https://travis-ci.org/robbieaverill/silverstripe-markdowntextareafield)
 
 ## Features
  * Live preview (toggle)
