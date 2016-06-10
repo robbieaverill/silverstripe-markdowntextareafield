@@ -1,6 +1,9 @@
 <?php
 /**
  * Same as MarkdownText but Extra markup is enabled by default.
+ *
+ * @category silverstripe
+ * @package  markdowntextareafield
  */
 class MarkdownTextExtra extends MarkdownText
 {

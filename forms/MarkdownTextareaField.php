@@ -1,6 +1,9 @@
 <?php
 /**
  * Configure the input field for markdown
+ *
+ * @category silverstripe
+ * @package  markdowntextareafield
  */
 class MarkdownTextareaField extends TextareaField
 {
@@ -9,13 +12,12 @@ class MarkdownTextareaField extends TextareaField
      * @var array
      */
     private static $allowed_actions = array(
-        'preview',
         'parse'
     );
 
     /**
-     * @var int Visible number of text lines.
      * Default on TextareaField is too small
+     * @var int Visible number of text lines.
      */
     protected $rows = 15;
 
@@ -34,14 +36,22 @@ class MarkdownTextareaField extends TextareaField
      */
     public function FieldHolder($properties = array())
     {
-        $this->extraClasses['stacked'] = 'stacked';
+        // Temporary: https://github.com/NextStepWebs/simplemde-markdown-editor/issues/355
+        Requirements::javascript('https://raw.githubusercontent.com/codemirror/CodeMirror/master/lib/codemirror.js');
 
-        Requirements::css(MARKDOWN_DIR . '/templates/css/styles.css');
+        Requirements::javascript(MARKDOWN_DIR . '/thirdparty/simplemde.min.js');
+        Requirements::css(MARKDOWN_DIR . '/thirdparty/simplemde.min.css');
 
-        Requirements::javascript(THIRDPARTY_DIR . '/jquery/jquery.js');
-        Requirements::javascript(THIRDPARTY_DIR . '/jquery-entwine/dist/jquery.entwine-dist.js');
-        Requirements::javascript(MARKDOWN_DIR . '/thirdparty/textinputs_jquery.js');
-        Requirements::javascript(MARKDOWN_DIR . '/templates/javascript/script.js');
+        $hideIcons = Convert::raw2json(Config::inst()->get(__CLASS__, 'hideicons'));
+
+        Requirements::customScript(<<<JS
+            var simplemde = new SimpleMDE({
+                element: document.getElementById('{$this->ID()}'),
+                spellChecker: false, // temporary
+                hideIcons: {$hideIcons}
+            });
+JS
+        );
 
         return parent::FieldHolder($properties);
     }
@@ -57,18 +67,6 @@ class MarkdownTextareaField extends TextareaField
     }
 
     /**
-     * Body for the preview iframe with just the typography styles included
-     * @return string html
-     */
-    public function preview()
-    {
-        Requirements::clear();
-        // Should contain text styles of the page by Silverstripe theme conventions.
-        Requirements::css('themes/' . Config::inst()->get('SSViewer', 'theme') . '/css/editor.css');
-        return $this->renderWith('PreviewFrame');
-    }
-
-    /**
      * Parse markdown into html
      * @return string html
      */
@@ -77,20 +75,5 @@ class MarkdownTextareaField extends TextareaField
         $parser = new MarkdownParser($this->request['markdown']);
 
         return ($this->enable_extra) ? $parser->parseExtra() : $parser->parse();
-    }
-
-    /**
-     * Get buttons described in buttons.yml and wrap them in ViewableData
-     * @return ArrayList list of buttons and theyr configurations
-     */
-    public function ToolbarButtons()
-    {
-        $buttons = new ArrayList();
-
-        foreach ($this->config()->get('buttons') as $button) {
-            $buttons->push(new ArrayData($button));
-        }
-
-        return $buttons;
     }
 }

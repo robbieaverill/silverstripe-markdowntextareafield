@@ -1,6 +1,9 @@
 <?php
 /**
- * Glue between Silverstripe TextParser interface and Michelf's markdown parser.
+ * Glue between Silverstripe TextParser interface and Michel F's markdown parser.
+ *
+ * @category silverstripe
+ * @package  markdowntextareafield
  */
 class MarkdownParser extends TextParser
 {

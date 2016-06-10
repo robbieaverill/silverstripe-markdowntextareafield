@@ -2,6 +2,9 @@
 /**
  * Represents a large text field that contains HTML and Markdown content.
  * Markdown gets processed automatically to HTML in templates
+ *
+ * @category silverstripe
+ * @package  markdowntextareafield
  */
 class MarkdownText extends HTMLText
 {
