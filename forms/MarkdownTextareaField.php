@@ -53,6 +53,9 @@ class MarkdownTextareaField extends TextareaField
 JS
         );
 
+        // Our modifications for SilverStripe
+        Requirements::css(MARKDOWN_DIR . '/templates/css/styles.css');
+
         return parent::FieldHolder($properties);
     }
 
