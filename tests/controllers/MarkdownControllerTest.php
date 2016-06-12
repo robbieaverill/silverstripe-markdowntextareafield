@@ -33,10 +33,10 @@ class MarkdownControllerTest extends FunctionalTest
         $response = $this->get('/admin/markdown/internallinks?term=cool');
 
         $expected = Convert::raw2json(
-            [
-                ['id' => 123, 'url_segment' => 'my-first-page', 'title' => 'My cool Page'],
-                ['id' => 234, 'url_segment' => 'my-second-page', 'title' => 'Another cool Page']
-            ]
+            array(
+                array('id' => 123, 'url_segment' => 'my-first-page', 'title' => 'My cool Page'),
+                array('id' => 234, 'url_segment' => 'my-second-page', 'title' => 'Another cool Page')
+            )
         );
 
         $this->assertSame($expected, $response->getBody());

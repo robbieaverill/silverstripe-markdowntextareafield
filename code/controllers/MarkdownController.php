@@ -12,7 +12,7 @@ class MarkdownController extends Controller
      * {@inheritDoc}
      * @var array
      */
-    private static $allowed_actions = ['internallinks'];
+    private static $allowed_actions = array('internallinks');
 
     /**
      * Given a search term, find a few relevant Page results and return as JSON
@@ -27,13 +27,13 @@ class MarkdownController extends Controller
         /** @var DataList $pages */
         $pages = DataObject::get('SiteTree', "Title LIKE '%$term%'")->limit(10);
 
-        $output = [];
+        $output = array();
         foreach ($pages as $page) {
-            $output[] = [
+            $output[] = array(
                 'id'          => $page->ID,
                 'url_segment' => $page->URLSegment,
                 'title'       => $page->Title
-            ];
+            );
         }
 
         $this->response->addHeader('Content-Type', 'application/json');
