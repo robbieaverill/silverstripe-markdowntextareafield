@@ -1,0 +1,13 @@
+SiteTree:
+  a:
+    ID: 123
+    Title: My cool Page
+    URLSegment: my-first-page
+  b:
+    ID: 234
+    Title: Another cool Page
+    URLSegment: my-second-page
+  c:
+    ID: 345
+    Title: My third Page
+    URLSegment: my-third-page
