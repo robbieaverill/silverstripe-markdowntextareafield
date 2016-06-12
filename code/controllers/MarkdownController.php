@@ -25,7 +25,7 @@ class MarkdownController extends Controller
         $term = Convert::raw2sql($this->getRequest()->getVar('term'));
 
         /** @var DataList $pages */
-        $pages = DataObject::get('SiteTree', "`Title` LIKE '%$term%'")->limit(10);
+        $pages = DataObject::get('SiteTree', "\"Title\" LIKE '%$term%'")->limit(10);
 
         $output = array();
         foreach ($pages as $page) {
