@@ -91,7 +91,7 @@ EXPECTED;
      * that is specified by an ID.
      *
      * @covers ::handleInternalLinks
-     * @covers ::getSiteTreeLink
+     * @covers MarkdownHelper::internalMarkdownLink
      */
     public function testReplaceInternalLinks()
     {

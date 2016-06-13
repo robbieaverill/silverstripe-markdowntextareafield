@@ -47,23 +47,16 @@ class MarkdownParser extends TextParser
                 // Fallback replacement
                 $replace = '#';
             } else {
-                $replace = $this->getSiteTreeLink($replace);
+                /**
+                 * TextParser is not extensible at the moment - we need to use a temporary helper instead
+                 * @see https://github.com/silverstripe/silverstripe-framework/pull/5686
+                 */
+                $helper = MarkdownHelper::create();
+                $replace = $helper->internalMarkdownLink($replace);
             }
 
             // Perform the replacement
             $this->content = str_replace($internalLinkSyntax, $replace, $this->content);
         }
-    }
-
-    /**
-     * Get the SiteTree's link and return it. Provides an extension hook to allow for custom handling.
-     * @param  SiteTree $siteTree
-     * @return string
-     */
-    public function getSiteTreeLink(SiteTree $siteTree)
-    {
-        $link = $siteTree->Link();
-        $this->extend('parseInternalLink', $siteTree, $link);
-        return $link;
     }
 }
