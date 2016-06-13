@@ -14,7 +14,7 @@ class MarkdownControllerTest extends FunctionalTest
      * {@inheritDoc}
      * @var string
      */
-    protected static $fixture_file = 'markdowntextareafield/tests/controllers/fixtures/pages.yml';
+    protected static $fixture_file = 'markdowntextareafield/tests/fixtures/pages.yml';
 
     /**
      * {@inheritDoc}
