@@ -34,22 +34,31 @@ class MarkdownTextareaField extends TextareaField
      * @param  array $properties
      * @return string            HTML to be used
      */
-    public function FieldHolder($properties = array())
+    public function FieldHolder($properties = [])
     {
-        // Temporary: https://github.com/NextStepWebs/simplemde-markdown-editor/issues/355
-        Requirements::javascript('https://raw.githubusercontent.com/codemirror/CodeMirror/master/lib/codemirror.js');
+        Requirements::javascript(MARKDOWN_DIR . '/thirdparty/codemirror.js');
+        Requirements::css(MARKDOWN_DIR . '/thirdparty/codemirror.css');
 
+        /**
+         * Moved codemirror to the local repo to have more control over always changing an unstable repo from the vendor
+         * https://github.com/kmddev/simplemde-markdown-editor/
+         * @author: Matias Nombarasco <matias.nombarasco@kathmandu.co.nz>
+         */
+        Requirements::javascript(MARKDOWN_DIR . '/thirdparty/modal.support.js');
+        Requirements::javascript(MARKDOWN_DIR . '/thirdparty/autocomplete.min.js');
         Requirements::javascript(MARKDOWN_DIR . '/thirdparty/simplemde.min.js');
         Requirements::css(MARKDOWN_DIR . '/thirdparty/simplemde.min.css');
 
         $hideIcons = Convert::raw2json(Config::inst()->get(__CLASS__, 'hideicons'));
 
-        Requirements::customScript(<<<JS
-            var simplemde = new SimpleMDE({
-                element: document.getElementById('{$this->ID()}'),
-                spellChecker: false, // temporary
-                hideIcons: {$hideIcons}
-            });
+        Requirements::customScript(
+            <<<JS
+                var simplemde = new SimpleMDE({
+                    element: document.getElementById('{$this->ID()}'),
+                    spellChecker: false, // temporary
+                    hideIcons: {$hideIcons},
+                    promptURLs: true
+                });
 JS
         );
 
