@@ -34,7 +34,7 @@ class MarkdownTextareaField extends TextareaField
      * @param  array $properties
      * @return string            HTML to be used
      */
-    public function FieldHolder($properties = [])
+    public function FieldHolder($properties = array())
     {
         Requirements::javascript(MARKDOWN_DIR . '/thirdparty/codemirror.js');
         Requirements::css(MARKDOWN_DIR . '/thirdparty/codemirror.css');
