@@ -52,12 +52,22 @@ class MarkdownTextareaField extends TextareaField
         $hideIcons = Convert::raw2json(Config::inst()->get(__CLASS__, 'hideicons'));
 
         Requirements::customScript(
+            Requirements::customScript(
             <<<JS
-                var simplemde = new SimpleMDE({
-                    element: document.getElementById('{$this->ID()}'),
-                    spellChecker: false, // temporary
-                    hideIcons: {$hideIcons},
-                    promptURLs: true
+                var registerMarkdownEditor = function() {
+                   var simplemde = new SimpleMDE({
+                        element: document.getElementById('{$this->ID()}'),
+                        spellChecker: false, // temporary
+                        hideIcons: {$hideIcons},
+                        promptURLs: true,
+                        forceSync: true
+                   });
+                };
+
+                registerMarkdownEditor();
+
+                jQuery(document).ajaxComplete(function() {
+                   registerMarkdownEditor();
                 });
 JS
         );
