@@ -52,7 +52,6 @@ class MarkdownTextareaField extends TextareaField
         $hideIcons = Convert::raw2json(Config::inst()->get(__CLASS__, 'hideicons'));
 
         Requirements::customScript(
-            Requirements::customScript(
             <<<JS
                 var registerMarkdownEditor = function() {
                    var simplemde = new SimpleMDE({
