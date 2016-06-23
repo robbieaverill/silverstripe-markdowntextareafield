@@ -66,7 +66,10 @@ class MarkdownTextareaField extends TextareaField
                 registerMarkdownEditor();
 
                 jQuery(document).ajaxComplete(function() {
-                   registerMarkdownEditor();
+                   //This only register the editor when you save the element
+                    if (!response.url.startsWith('/admin/markdown/internallinks')) {
+                        registerMarkdownEditor();
+                    }
                 });
 JS
         );
