@@ -53,7 +53,8 @@ class MarkdownTextareaField extends TextareaField
 
         Requirements::customScript(
             <<<JS
-                var registerMarkdownEditor = function() {
+            (function($) {
+            $.entwine('markdowntextareafield', function() {
                    var simplemde = new SimpleMDE({
                         element: document.getElementById('{$this->ID()}'),
                         spellChecker: false, // temporary
@@ -61,16 +62,7 @@ class MarkdownTextareaField extends TextareaField
                         promptURLs: true,
                         forceSync: true
                    });
-                };
-
-                registerMarkdownEditor();
-
-                jQuery(document).ajaxComplete(function() {
-                   //This only register the editor when you save the element
-                    if (!response.url.startsWith('/admin/markdown/internallinks')) {
-                        registerMarkdownEditor();
-                    }
-                });
+            });
 JS
         );
 
