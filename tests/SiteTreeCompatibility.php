@@ -9,9 +9,9 @@
 if (!class_exists('SiteTree', false)) {
     class SiteTree extends DataObject implements TestOnly
     {
-        private static $db = [
+        private static $db = array(
             'Title'      => 'Varchar',
             'URLSegment' => 'Varchar'
-        ];
+        );
     }
 }
