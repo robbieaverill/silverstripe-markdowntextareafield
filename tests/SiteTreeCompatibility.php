@@ -6,12 +6,14 @@
  * @package  markdowntextareafield
  * @author   Robbie Averill <robbie@averill.co.nz>
  */
-if (!class_exists('SiteTree', false)) {
-    class SiteTree extends DataObject implements TestOnly
-    {
-        private static $db = array(
-            'Title'      => 'Varchar',
-            'URLSegment' => 'Varchar'
-        );
-    }
+if (class_exists('SiteTree')) {
+    return;
+}
+
+class SiteTree extends DataObject implements TestOnly
+{
+    private static $db = array(
+        'Title'      => 'Varchar',
+        'URLSegment' => 'Varchar'
+    );
 }
