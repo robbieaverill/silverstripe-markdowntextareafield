@@ -53,15 +53,17 @@ class MarkdownTextareaField extends TextareaField
 
         Requirements::customScript(
             <<<JS
-            $.entwine('markdowntextareafield', function() {
-                var simplemde = new SimpleMDE({
-                    element: document.getElementById('{$this->ID()}'),
-                    spellChecker: false, // temporary
-                    hideIcons: {$hideIcons},
-                    promptURLs: true,
-                    forceSync: true
+            (function($) {
+                $.entwine('markdowntextareafield', function() {
+                    var simplemde = new SimpleMDE({
+                        element: document.getElementById('{$this->ID()}'),
+                        spellChecker: false, // temporary
+                        hideIcons: {$hideIcons},
+                        promptURLs: true,
+                        forceSync: true
+                    });
                 });
-            });
+            })(jQuery);
 JS
         );
 
