@@ -1,1 +1,1 @@
-<textarea data-parseurl="{$Link}/parse" $AttributesHTML>$Value</textarea>
+<textarea class="bu_markdown" data-parseurl="{$Link}/parse" $AttributesHTML>$Value</textarea>
