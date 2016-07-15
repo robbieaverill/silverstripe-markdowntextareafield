@@ -11,3 +11,18 @@
     left: 160px;
     bottom: 53px;
 }
+
+
+#close {
+    width: 13px;
+    height: 13px;
+    text-indent: 0;
+    top: -7px;
+    right: -7px;
+    border: 4px #bbb solid;
+    background: #fff;
+    font-size: 20px;
+    border-radius: 22px;
+    padding: 6px;
+    line-height: 10px;
+}

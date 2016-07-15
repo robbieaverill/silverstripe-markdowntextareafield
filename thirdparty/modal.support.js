@@ -71,11 +71,23 @@
 
         // Close the modal
         method.close = function (event) {
+            if(typeof this.$modal == 'undefined') {
+                //force method
+                jQuery('#modal').hide();
+                jQuery('#overlay').hide();
+                if (typeof event != 'undefined') {
+                    event.preventDefault();
+                }
+                return false;
+            }
             this.$modal.hide();
             this.$overlay.hide();
             this.$content.empty();
             jQuery(window).unbind('resize.modal');
-            return false;
+            if (typeof event != 'undefined') {
+                event.preventDefault();
+            }
+
         };
 
         return method;
