@@ -1,6 +1,6 @@
 function initializeMarkdownEditor() {
     jQuery.entwine('markdowntextareafield', function() {
-        jQuery('.kathmandu_markdown').each(function() {
+        jQuery('.bu_markdown').each(function() {
             var simplemde = new SimpleMDE({
                 element: this,
                 spellChecker: false, // temporary
