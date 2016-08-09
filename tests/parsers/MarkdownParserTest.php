@@ -87,6 +87,86 @@ EXPECTED;
     }
 
     /**
+     * Ensure that the parseExtra() method renders extra things like tables
+     *
+     * @covers ::parseExtra
+     * @param string $markdown
+     * @param string $expected
+     * @dataProvider markdownExtraProvider
+     */
+    public function testParseMarkdownExtra($markdown, $expected)
+    {
+        $parser = new MarkdownParser($markdown);
+        $result = $parser->parseExtra();
+        $this->assertSame($expected, $result);
+    }
+
+    public function markdownExtraProvider()
+    {
+        $first = array();
+        $first[] = <<<MARKDOWN
+| Header 1 | Header 2 |
+| --- | --- |
+| Cell 1   | Cell 2 |
+| Cell 3   | Cell 4 |
+MARKDOWN;
+
+        $first[] = <<<EXPECTED
+<table>
+<thead>
+<tr>
+  <th>Header 1</th>
+  <th>Header 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Cell 1</td>
+  <td>Cell 2</td>
+</tr>
+<tr>
+  <td>Cell 3</td>
+  <td>Cell 4</td>
+</tr>
+</tbody>
+</table>
+
+EXPECTED;
+
+        $second = array();
+        $second[] = <<<MARKDOWN
+|Header 1|Header 2|
+|---|---|
+|Cell 1|Cell 2|
+|Cell 3|Cell 4|
+MARKDOWN;
+
+        $second[] = <<<EXPECTED
+<table>
+<thead>
+<tr>
+  <th>Header 1</th>
+  <th>Header 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Cell 1</td>
+  <td>Cell 2</td>
+</tr>
+<tr>
+  <td>Cell 3</td>
+  <td>Cell 4</td>
+</tr>
+</tbody>
+</table>
+
+EXPECTED;
+
+        return array($first, $second);
+    }
+
+    /**
      * Test that internal SilverStripe links are converted to HTML using the correct URL link for the Page
      * that is specified by an ID.
      *
