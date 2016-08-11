@@ -34,8 +34,8 @@ class MarkdownControllerTest extends FunctionalTest
 
         $expected = Convert::raw2json(
             array(
-                array('id' => 123, 'url_segment' => 'my-first-page', 'title' => 'My cool Page'),
-                array('id' => 234, 'url_segment' => 'my-second-page', 'title' => 'Another cool Page')
+                array('id' => 123, 'url_segment' => '#my-first-page', 'title' => 'My cool Page'),
+                array('id' => 234, 'url_segment' => '#my-second-page', 'title' => 'Another cool Page')
             )
         );
 
