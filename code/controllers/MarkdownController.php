@@ -31,7 +31,7 @@ class MarkdownController extends Controller
         foreach ($pages as $page) {
             $output[] = array(
                 'id'          => $page->ID,
-                'url_segment' => $page->URLSegment,
+                'url_segment' => '#' . $page->URLSegment,
                 'title'       => $page->Title
             );
         }

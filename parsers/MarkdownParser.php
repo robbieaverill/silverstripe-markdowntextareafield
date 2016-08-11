@@ -33,16 +33,14 @@ class MarkdownParser extends TextParser
      */
     protected function handleInternalLinks()
     {
-        preg_match_all('~(#[\\w-_]+:\\d+)~', $this->content, $matches);
-        if (empty($matches[1])) {
+        preg_match_all('~\[[^\]]*\]\((?P<link_syntax>#[\w-_]+:(?P<page_id>\d+))\)~', $this->content, $matches);
+        if (empty($matches['link_syntax']) || empty($matches['page_id'])) {
             return $this;
         }
 
-        foreach (array_unique($matches[1]) as $internalLinkSyntax) {
-            $pageId = substr($internalLinkSyntax, strrpos($internalLinkSyntax, ':') + 1);
-
+        foreach ($matches['link_syntax'] as $key => $internalLinkSyntax) {
             // Get new URL segment
-            $replace = SiteTree::get()->byId($pageId);
+            $replace = SiteTree::get()->byId($matches['page_id'][$key]);
             if (!$replace) {
                 // Fallback replacement
                 $replace = '#';
