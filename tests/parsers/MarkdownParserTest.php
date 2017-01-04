@@ -8,6 +8,8 @@
  * @package  markdowntextareafield
  * @author   Robbie Averill <robbie@averill.co.nz>
  */
+require_once dirname(__FILE__) . '/../SiteTreeCompatibility.php';
+
 class MarkdownParserTest extends SapphireTest
 {
     /**
