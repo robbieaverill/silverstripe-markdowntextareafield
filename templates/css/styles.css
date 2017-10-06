@@ -1,6 +1,10 @@
 .field.markdowntextarea .toolbar {
     margin-bottom: 5px;
-    height: 32px;
+    height: 36px;
+}
+
+.field.markdowntextarea .toolbar img {
+    padding-top: 3px;
 }
 
 .field.markdowntextarea .toolbar button:first-child {
@@ -27,3 +31,5 @@
 .field.markdowntextarea .toolbar button[data-preview="true"] {
     float: right;
 }
+
+

@@ -3,7 +3,7 @@
         <button data-prefix="$prefix" data-affix="$affix" title="$name"
             <% if $preview %> data-preview="true" <% end_if %>>
             <% if $pic %>
-                <img src="markdowntextareafield/templates/images/buttons/$pic" alt="$name" title="$name">
+                <img src="$pic" alt="$name" title="$name">
             <% else %>
                 $label
             <% end_if %>
