@@ -26,6 +26,9 @@
         "michelf/php-markdown": "*"
     },
     "extra": {
-       "installer-name": "markdowntextareafield"
+        "installer-name": "markdowntextareafield",
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
     }
 }
